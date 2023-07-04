@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+  </head>
+<body>
+  <div class="mainsetfont">
+ <h1>Unit Converter</h1>
+  </div> 
+  <div class="contentpart">
+ <input type="text" placeholder="Meter" id="meter">
+ <input type="text" placeholder="Centemeter" id="centemeter">
+ <input type="button" value="Submit" class="button" onclick="powers()">
+ <div class="result">
+ </div>
+</div>
+</body>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .result{
+    margin-top: 3%;
+    margin-left: 20%;
+    height: 10%;
+    width: 60%;
+    font-size:2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+     margin-top: 25px;
+     background-color:rgb(169, 170, 195);
+     color: rgb(0, 0, 0);
+    padding-left: 4%;
+    
+  }
+  .mainsetfont {
+   border: 2px solid black;
+   height: 70px;
+   width: 100vw;
+   text-align: center;
+   background-color: darkblue;
+   color: aliceblue;
+   
+
+  }
+  .contentpart{
+    border: 3px solid black;
+    height: 50%;
+    width: 45%;
+    margin-top: 4%;
+    margin-left: 30%;
+    border-radius: 45px;
+    position: fixed;
+    box-shadow: 5px 10px 10px 10px #49493a;
+    background-color: #ff4d00;
+  }
+  input {
+    margin-top: 3%;
+    margin-left: 4%;
+    height: 10%;
+    width: 90%;
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+     margin-top: 25px;
+     background-color:rgb(227, 226, 214);
+     color: rgb(0, 0, 0);
+   
+  }
+  
+  .button {
+    width: 20vw;
+    margin-left: 25%;
+    background-color: rgb(19, 5, 140);
+    color: antiquewhite;
+    
+  }
+  .timeset{
+    margin-left: 70%;
+    background-color: red;
+    
+  }
+</style>
+<script type="text/javascript">
+
+function powers()
+{
+    let a= document.getElementById("meter").value;
+    let b= document.getElementById("centemeter").value;
+    let units;
+  if ( a=="" && b=="")
+  {
+    confirm("Data Field Blank");
+  }
+  else if (a!=="" && b=="")
+  {
+    let c= a*100;
+    units= "Cm"
+    R= c  +" " + units
+
+  }
+  else if ( b!==" " && a=="")
+  {
+    c= b/100;
+    units= "Meter"
+    R= c  +" " + units
+    
+  }
+  else if ( a!=="" && b!=="")
+  {
+    alert("Choose atleast one unit");
+  }
+  else {
+    alert("Invalid number");
+  }
+  document.getElementsByClassName("result")[0].innerHTML=R;
+
+}
+</script>
+</html>
